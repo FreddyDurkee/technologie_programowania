@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Configuration;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Linq;
+
 
 namespace Linq2Sql
 {
@@ -12,7 +9,7 @@ namespace Linq2Sql
         {
         static void Main(string[] args)
         {
-            // string connectString = ConfigurationManager.ConnectionStrings["LinqToSQLDBConnectionString"].ToString();
+            string connectString = System.Configuration.ConfigurationManager.ConnectionStrings["Linq2Sql.Properties.Settings.LinqToSqlConnectionString"].ToString();
             DataClasses1DataContext db = new DataClasses1DataContext();
 
             Department newDepartment = new Department();
@@ -25,11 +22,12 @@ namespace Linq2Sql
             //Create new Employee
 
             Employee newEmployee = new Employee();
-                newEmployee.Name = "Michael";
-                newEmployee.Email = "yourname@companyname.com";
-                newEmployee.ContactNo = "343434343";
-                newEmployee.DepartmentId = 1;
-                newEmployee.Adress = "Michael - USA";
+            newEmployee.EmployeeId = 1;
+            newEmployee.Name = "Michael";
+            newEmployee.Email = "yourname@companyname.com";
+            newEmployee.ContactNo = "343434343";
+            newEmployee.DepartmentId = 1;
+            newEmployee.Adress = "Michael - USA";
 
                 //Add new Employee to database
                 db.Employee.InsertOnSubmit(newEmployee);
