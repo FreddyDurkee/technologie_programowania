@@ -53,6 +53,7 @@
     <Reference Include="System.Data.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IEnumerableVSIQueryable.cs" />
     <Compile Include="LinqToSQLCRUD.cs" />
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
